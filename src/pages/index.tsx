@@ -47,6 +47,7 @@ export default function Home() {
             <p className="text-2xl text-white">
               {hello.data ? hello.data.greeting : "Loading tRPC query..."}
             </p>
+            Hi
             <AuthShowcase />
           </div>
         </div>
@@ -60,7 +61,7 @@ function AuthShowcase() {
 
   const { data: secretMessage } = api.post.getSecretMessage.useQuery(
     undefined, // no input
-    { enabled: sessionData?.user !== undefined }
+    { enabled: sessionData?.user !== undefined },
   );
 
   return (
